@@ -21,7 +21,7 @@ export default function Services() {
             Services
           </h2>
           <p className="text-base text-offwhite-300 font-normal leading-relaxed">
-            Here is what I design for brands.
+            Here's what I can offer your brand
           </p>
         </motion.div>
 
