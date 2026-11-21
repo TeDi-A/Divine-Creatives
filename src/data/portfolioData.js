@@ -1,3 +1,15 @@
+export const FLYER_CATEGORIES = [
+  "Real Estate",
+  "Fitness & Gym",
+  "Bakery",
+  "Grill",
+  "Event Decor",
+  "Skincare",
+  "Fastfood",
+  "Event Catering",
+  "Restaurant"
+];
+
 export const portfolioManifest = {
   agency: "Divine Creatives",
   tagline: "Designs that Communicate, Engage and Sell.",
@@ -6,7 +18,8 @@ export const portfolioManifest = {
     gold: "#D4AF37",
     offWhite: "#F5F5F2",
   },
-  categories: [
+  categories: FLYER_CATEGORIES,
+  filterTabs: [
     { id: "all", label: "All Work" },
     { id: "campaigns", label: "Campaigns" },
     { id: "flyers", label: "Flyers" },
@@ -171,8 +184,8 @@ export const portfolioManifest = {
       tagline: "Fire, Spice & Authentic Cuts",
       industry: "Grill & Street Food",
       coverImage: "/Portfolio Assets/Campaigns/SUYASPOT/Artboard1.png",
-      assetCount: 5,
-      concept: "A 5-part advertising campaign celebrating smoky barbecue cuts, fiery pepper blends, and evening dining.",
+      assetCount: 4,
+      concept: "A 4-part advertising campaign celebrating smoky barbecue cuts, fiery pepper blends, and evening dining.",
       artboards: [
         {
           id: "sy-01",
@@ -201,13 +214,6 @@ export const portfolioManifest = {
           title: "Crispy Masa & Suya Combo",
           image: "/Portfolio Assets/Campaigns/SUYASPOT/Artboard4.png",
           headline: "Traditional Flavors, Pure Joy.",
-        },
-        {
-          id: "sy-05",
-          order: 5,
-          title: "Boxed for Delivery",
-          image: "/Portfolio Assets/Campaigns/SUYASPOT/Artboard5.png",
-          headline: "Hot Suya Delivered to Your Doorstep.",
         }
       ]
     },
@@ -362,7 +368,8 @@ export const portfolioManifest = {
       brand: "Ego Properties",
       title: "Luxury Real Estate",
       headline: "Luxury Living, Prime Locations",
-      industry: "Real estate",
+      category: "Real Estate",
+      industry: "Real Estate",
       image: "/Portfolio Assets/Flyers/EGOPROPERTIES.png",
       description: "High-impact property investment flyer featuring luxury duplexes and verified land titles."
     },
@@ -371,6 +378,7 @@ export const portfolioManifest = {
       brand: "Flux Fitness",
       title: "Fitness & Strength",
       headline: "Transform Your Mind & Body",
+      category: "Fitness & Gym",
       industry: "Fitness & Gym",
       image: "/Portfolio Assets/Flyers/FLUXFITNESS.png",
       description: "Modern gym membership and fitness training promotional flyer with membership offers."
@@ -380,6 +388,7 @@ export const portfolioManifest = {
       brand: "Banana Bliss",
       title: "Fresh Banana Bread",
       headline: "Every Slice, A Little Bliss",
+      category: "Bakery",
       industry: "Bakery",
       image: "/Portfolio Assets/Flyers/Banana_Bliss.png",
       description: "Promotional flyer for fresh banana walnut bread with clear ordering channels."
@@ -389,6 +398,7 @@ export const portfolioManifest = {
       brand: "Baked By Bisi",
       title: "Artisan Bakes",
       headline: "Oven Fresh Every Single Morning",
+      category: "Bakery",
       industry: "Bakery",
       image: "/Portfolio Assets/Flyers/BAKEDBYBISI.png",
       description: "Artisan bread and pastry flyer highlighting fresh oven bakes and customized cake orders."
@@ -398,7 +408,8 @@ export const portfolioManifest = {
       brand: "GrillHouse",
       title: "Weekend Grill Special",
       headline: "Weekend Grill Special",
-      industry: "Grill spot",
+      category: "Grill",
+      industry: "Grill",
       image: "/Portfolio Assets/Flyers/GrillHouse_Weekend_Special.png",
       description: "Weekend promo flyer showcasing a burger, fries, and drink meal combo."
     },
@@ -407,7 +418,8 @@ export const portfolioManifest = {
       brand: "Bites & Banter",
       title: "Dining & Drinks",
       headline: "Good Food, Great Cocktails, Chill Vibes",
-      industry: "Casual Dining",
+      category: "Restaurant",
+      industry: "Restaurant",
       image: "/Portfolio Assets/Flyers/BITESANDBANTER.png",
       description: "Promotional dining flyer showcasing signature platters, cocktails, and night lounge dining."
     },
@@ -416,7 +428,8 @@ export const portfolioManifest = {
       brand: "Cravings by Orezi",
       title: "Sweet Cravings",
       headline: "Satisfy Every Sweet Craving",
-      industry: "Pastry & Treats",
+      category: "Bakery",
+      industry: "Bakery",
       image: "/Portfolio Assets/Flyers/CRAVINGS_BY_OREZI.png",
       description: "Dessert and sweet treats promo flyer highlighting cupcakes, parfaits, and finger bites."
     },
@@ -425,7 +438,8 @@ export const portfolioManifest = {
       brand: "Crumbs & Co",
       title: "Artisan Pastry",
       headline: "Sweet Moments, Baked with Love",
-      industry: "Bakery & Cafe",
+      category: "Bakery",
+      industry: "Bakery",
       image: "/Portfolio Assets/Flyers/CRUMBS_AND_CO.png",
       description: "Cafe and confectionery promotional flyer for daily fresh coffee and croissant specials."
     },
@@ -434,7 +448,8 @@ export const portfolioManifest = {
       brand: "Plush Events",
       title: "Event Decor & Rentals",
       headline: "Your Event, Beautifully Done",
-      industry: "Event decor",
+      category: "Event Decor",
+      industry: "Event Decor",
       image: "/Portfolio Assets/Flyers/Plush_Events_Decor.png",
       description: "Service flyer displaying hall setups, floral decor, stage design, and party rentals."
     },
@@ -443,7 +458,8 @@ export const portfolioManifest = {
       brand: "Pure Shea",
       title: "Natural Skincare",
       headline: "Pure Glow, Pure Moisture",
-      industry: "Organic Skincare",
+      category: "Skincare",
+      industry: "Skincare",
       image: "/Portfolio Assets/Flyers/PURESHEA.png",
       description: "Raw organic shea butter and natural skincare promo flyer for radiant skin."
     },
@@ -452,36 +468,40 @@ export const portfolioManifest = {
       brand: "Wrap It Up",
       title: "Gourmet Wraps",
       headline: "Loaded Shawarmas & Juicy Grills",
-      industry: "Fast Food",
+      category: "Fastfood",
+      industry: "Fastfood",
       image: "/Portfolio Assets/Flyers/WRAPITUP.png",
       description: "Fast casual promo flyer for loaded gourmet shawarmas and quick bite combos."
     },
     {
       id: "flyer-zest",
-      brand: "Zest",
-      title: "Cold-Pressed Juices",
-      headline: "100% Pure Natural Refreshment",
-      industry: "Beverages",
+      brand: "Zest Bakehouse",
+      title: "Custom Cakes & Celebration Desserts",
+      headline: "Baked for Your Moments",
+      category: "Bakery",
+      industry: "Bakery",
       image: "/Portfolio Assets/Flyers/ZEST.png",
-      description: "Fresh cold-pressed juices and fruit smoothie promo flyer made with real fruit."
+      description: "Custom birthday cakes, wedding cakes, cupcake towers, and celebration desserts crafted for special occasions."
     },
     {
       id: "flyer-koko",
-      brand: "Koko",
-      title: "Modern Lifestyle",
-      headline: "Effortless Style, Modern Attitude",
-      industry: "Fashion & Lifestyle",
+      brand: "Kòkò Kitchen",
+      title: "Event Catering & Platters",
+      headline: "Freshly Baked for Your Weekend",
+      category: "Event Catering",
+      industry: "Event Catering",
       image: "/Portfolio Assets/Flyers/KOKO.jpg",
-      description: "Contemporary lifestyle and fashion brand visual flyer featuring minimalist looks."
+      description: "Event catering and artisan party snack platters featuring meat pies, sausage rolls, scotch eggs, and puff puff."
     },
     {
       id: "flyer-nkechi",
       brand: "Nkechi's Kitchen",
       title: "Authentic Meals",
       headline: "Authentic Home Cooking Everyday",
-      industry: "African Cuisine",
+      category: "Restaurant",
+      industry: "Restaurant",
       image: "/Portfolio Assets/Flyers/NKECHI.png",
-      description: "Traditional home-cooked Nigerian dishes and meal prep flyer."
+      description: "Traditional home-cooked Nigerian dishes and authentic dining meal prep flyer."
     }
   ],
   services: [

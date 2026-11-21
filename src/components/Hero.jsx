@@ -54,12 +54,12 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column */}
-          <div className="lg:col-span-7 space-y-7">
+          <div className="lg:col-span-7 space-y-7 text-center lg:text-left flex flex-col items-center lg:items-start">
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: PREMIUM_EASE }}
-              className="font-display text-4xl sm:text-6xl lg:text-[64px] leading-[1.1] text-offwhite-100 font-bold tracking-tight"
+              className="font-display text-4xl sm:text-6xl lg:text-[64px] leading-[1.1] text-offwhite-100 font-bold tracking-tight text-center lg:text-left"
             >
               Designs that <br />
               Communicate, <br />
@@ -70,32 +70,32 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15, ease: PREMIUM_EASE }}
-              className="text-base sm:text-lg text-offwhite-300 font-normal leading-relaxed max-w-xl"
+              className="text-base sm:text-lg text-offwhite-300 font-normal leading-relaxed max-w-xl text-center lg:text-left mx-auto lg:mx-0"
             >
               I create clean, purposeful graphic design and visual marketing campaigns that help brands stand out, connect with customers, and drive sales.
             </motion.p>
 
-            {/* Action buttons */}
+            {/* Action buttons: same row on mobile & centered */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.28, ease: PREMIUM_EASE }}
-              className="flex flex-wrap items-center gap-4 pt-2"
+              className="grid grid-cols-2 gap-3 w-full max-w-sm sm:max-w-none sm:flex sm:flex-row sm:items-center sm:justify-start sm:gap-4 pt-2"
             >
               <a
                 href="#services"
-                className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-sm bg-gold-500 hover:bg-gold-400 text-teal-950 font-bold text-xs tracking-wider uppercase transition-colors shadow-lg"
+                className="group inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-7 py-3 sm:py-3.5 rounded-sm bg-gold-500 hover:bg-gold-400 text-teal-950 font-bold text-[11px] sm:text-xs tracking-wider uppercase transition-colors shadow-lg text-center"
               >
                 <span>View Services</span>
-                <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
+                <ArrowDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-y-0.5" />
               </a>
 
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm border border-teal-700 hover:border-gold-500 bg-teal-900/60 hover:bg-teal-900 text-offwhite-100 font-semibold text-xs tracking-wider uppercase transition-colors"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-3 sm:py-3.5 rounded-sm border border-teal-700 hover:border-gold-500 bg-teal-900/60 hover:bg-teal-900 text-offwhite-100 font-semibold text-[11px] sm:text-xs tracking-wider uppercase transition-colors text-center"
               >
                 <span>Start a Project</span>
-                <ArrowUpRight className="w-4 h-4 text-gold-400" />
+                <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-400" />
               </a>
             </motion.div>
 
@@ -104,7 +104,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.4, ease: PREMIUM_EASE }}
-              className="grid grid-cols-2 gap-8 pt-6 border-t border-teal-800/80 max-w-sm"
+              className="grid grid-cols-2 gap-8 pt-6 border-t border-teal-800/80 max-w-sm w-full mx-auto lg:mx-0 text-center lg:text-left"
             >
               <div>
                 <p className="font-display text-2xl sm:text-3xl text-gold-400 font-bold">50+</p>

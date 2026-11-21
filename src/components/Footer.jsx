@@ -14,7 +14,7 @@ export default function Footer() {
           
           {/* Logo & Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-sm bg-teal-900 border border-teal-700 flex items-center justify-center p-1">
+            <div className="w-8 h-8 rounded-full overflow-hidden bg-teal-900 border border-teal-700 flex items-center justify-center p-1">
               <img
                 src="/logo-transparent.png"
                 alt="Divine Creatives"

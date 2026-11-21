@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { portfolioManifest } from '../data/portfolioData';
+import { portfolioManifest, FLYER_CATEGORIES } from '../data/portfolioData';
 import CampaignCard from './CampaignCard';
 import FlyerCard from './FlyerCard';
 import ProjectLightbox from './ProjectLightbox';
@@ -9,6 +9,7 @@ import { PREMIUM_EASE } from '../utils/animations';
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState('all');
+  const [selectedFlyerCategory, setSelectedFlyerCategory] = useState('all');
   const [lightboxState, setLightboxState] = useState({
     isOpen: false,
     item: null,
@@ -17,6 +18,10 @@ export default function Portfolio() {
   });
 
   const { campaigns, flyers } = portfolioManifest;
+
+  const displayedFlyers = selectedFlyerCategory === 'all'
+    ? flyers
+    : flyers.filter((f) => f.category === selectedFlyerCategory);
 
   const handleSelectArtboard = (campaign, artboardIndex) => {
     const artboard = campaign.artboards[artboardIndex];
@@ -168,15 +173,52 @@ export default function Portfolio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: PREMIUM_EASE }}
-                className="flex items-center justify-between border-b border-teal-800/60 pb-3"
+                className="space-y-4 border-b border-teal-800/60 pb-4"
               >
-                <h3 className="font-display text-2xl text-offwhite-100 font-bold">
-                  Flyers
-                </h3>
+                <div className="flex items-center justify-between">
+                  <h3 className="font-display text-2xl text-offwhite-100 font-bold">
+                    Flyers
+                  </h3>
+                  <span className="text-xs text-gold-400 font-semibold tracking-wide uppercase">
+                    {selectedFlyerCategory === 'all'
+                      ? `${flyers.length} DESIGNS`
+                      : `${displayedFlyers.length} IN ${selectedFlyerCategory.toUpperCase()}`}
+                  </span>
+                </div>
+
+                {/* Category Pills: Real Estate, Fitness & Gym, Bakery, Grill, Event Decor, Skincare, Fastfood, Event Catering, Restaurant */}
+                <div className="flex flex-wrap items-center gap-2 pt-1">
+                  <button
+                    onClick={() => setSelectedFlyerCategory('all')}
+                    className={`px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-colors ${
+                      selectedFlyerCategory === 'all'
+                        ? 'bg-gold-500 text-teal-950 shadow-sm font-bold'
+                        : 'bg-teal-900/60 hover:bg-teal-900 text-offwhite-300 hover:text-offwhite-100 border border-teal-800'
+                    }`}
+                  >
+                    All ({flyers.length})
+                  </button>
+                  {FLYER_CATEGORIES.map((category) => {
+                    const count = flyers.filter((f) => f.category === category).length;
+                    return (
+                      <button
+                        key={category}
+                        onClick={() => setSelectedFlyerCategory(category)}
+                        className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+                          selectedFlyerCategory === category
+                            ? 'bg-gold-500 text-teal-950 font-bold shadow-sm'
+                            : 'bg-teal-900/40 hover:bg-teal-900 text-offwhite-300 hover:text-offwhite-100 border border-teal-800/80 hover:border-teal-700'
+                        }`}
+                      >
+                        {category} ({count})
+                      </button>
+                    );
+                  })}
+                </div>
               </motion.div>
 
               <div className="space-y-8">
-                {flyers.map((flyer, index) => (
+                {displayedFlyers.map((flyer, index) => (
                   <FlyerCard
                     key={flyer.id}
                     flyer={flyer}

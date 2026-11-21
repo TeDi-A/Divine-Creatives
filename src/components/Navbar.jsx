@@ -32,7 +32,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
         {/* Brand Logo with User Uploaded Monogram Mark */}
         <a href="#" className="group flex items-center gap-3">
-          <div className="w-10 h-10 rounded-sm bg-teal-900/90 border border-teal-700/80 flex items-center justify-center p-1.5 group-hover:border-gold-500 transition-colors">
+          <div className="w-10 h-10 rounded-full overflow-hidden bg-teal-900/90 border border-teal-700/80 flex items-center justify-center p-1.5 group-hover:border-gold-500 transition-colors">
             <img
               src="/logo-transparent.png"
               alt="Divine Creatives Logo"

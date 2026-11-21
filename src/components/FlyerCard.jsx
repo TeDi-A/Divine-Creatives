@@ -38,11 +38,9 @@ export default function FlyerCard({ flyer, index = 0, onSelectFlyer }) {
         {/* Right Column: Project Information */}
         <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
           
-          {/* A. Project Tags: Industry | 1 Design */}
+          {/* A. Project Tag: Category */}
           <div className="flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-gold-400">
-            <span>{flyer.industry}</span>
-            <span className="text-teal-700 font-bold">|</span>
-            <span>1 DESIGN</span>
+            <span>{flyer.category || flyer.industry}</span>
           </div>
 
           {/* B. Brand Name: Largest & Most Prominent Element */}
@@ -62,15 +60,8 @@ export default function FlyerCard({ flyer, index = 0, onSelectFlyer }) {
             {flyer.description}
           </p>
 
-          {/* E. Design Indicator: DESIGN 1 OF 1 */}
-          <div className="pt-2 border-t border-teal-800/60 space-y-3">
-            <p className="text-xs font-mono font-semibold uppercase tracking-wider text-gold-400">
-              DESIGN 1 OF 1
-            </p>
-          </div>
-
           {/* Lightbox / Action Trigger */}
-          <div className="pt-3">
+          <div className="pt-2">
             <button
               onClick={() => onSelectFlyer(flyer)}
               className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold-400 hover:text-gold-300 transition-colors group"
