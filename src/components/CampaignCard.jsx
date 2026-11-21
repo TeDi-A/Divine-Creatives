@@ -12,73 +12,73 @@ export default function CampaignCard({ campaign, index = 0, onSelectArtboard }) 
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 0.7, delay: Math.min(index * 0.1, 0.25), ease: PREMIUM_EASE }}
-      className="bg-teal-900/25 border border-teal-800/70 hover:border-gold-500/60 hover:bg-teal-900/35 rounded-xl p-6 sm:p-8 lg:p-10 transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5"
+      transition={{ duration: 0.7, delay: Math.min(index * 0.08, 0.25), ease: PREMIUM_EASE }}
+      className="group bg-teal-900/25 border border-teal-800/70 hover:border-gold-500/60 hover:bg-teal-900/35 rounded-2xl p-5 sm:p-7 transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5 flex flex-col justify-between"
     >
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
-        
-        {/* Left Column: Large Featured Project Image */}
-        <div className="md:col-span-5">
-          <div
-            className="relative aspect-[4/5] rounded overflow-hidden bg-teal-950 border border-teal-800/80 cursor-pointer group shadow-xl"
-            onClick={() => onSelectArtboard(campaign, selectedArtboardIndex)}
-          >
-            <img
-              src={activeArtboard.image}
-              alt={activeArtboard.title || campaign.title}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-            />
-            
-            <div className="absolute inset-0 bg-teal-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <span className="px-3.5 py-2 rounded bg-gold-500 text-teal-950 text-xs font-bold uppercase flex items-center gap-1.5 shadow-lg">
-                <Eye className="w-3.5 h-3.5" />
-                <span>Open View</span>
-              </span>
-            </div>
+      <div className="space-y-6">
+        {/* Featured Project Image (4:5 Aspect Ratio) */}
+        <div
+          className="relative aspect-[4/5] rounded-xl overflow-hidden bg-teal-950 border border-teal-800/80 cursor-pointer group/img shadow-xl"
+          onClick={() => onSelectArtboard(campaign, selectedArtboardIndex)}
+        >
+          <img
+            src={activeArtboard.image}
+            alt={activeArtboard.title || campaign.title}
+            className="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-[1.02]"
+            loading="lazy"
+          />
+          
+          <div className="absolute inset-0 bg-teal-950/60 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+            <span className="px-4 py-2 rounded-md bg-gold-500 text-teal-950 text-xs font-bold uppercase flex items-center gap-1.5 shadow-lg">
+              <Eye className="w-3.5 h-3.5" />
+              <span>Open Full View</span>
+            </span>
           </div>
         </div>
 
-        {/* Right Column: Project Information & Interactive Design Gallery */}
-        <div className="md:col-span-7 flex flex-col justify-between space-y-6">
-          
-          {/* A. Project Tags: Industry | Number of Designs */}
+        {/* Project Information & Hierarchy */}
+        <div className="space-y-4">
+          {/* A. Project Tags */}
           <div className="flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-gold-400">
             <span>{campaign.industry}</span>
-            <span className="text-teal-700 font-bold">|</span>
+            <span className="text-teal-700 font-bold">•</span>
             <span>{campaign.assetCount} DESIGNS</span>
           </div>
 
-          {/* B. Brand Name: Largest & Most Prominent Element */}
+          {/* B. Brand Name */}
           <div>
-            <h3 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-offwhite-100 uppercase">
+            <h3 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-offwhite-100 uppercase group-hover:text-gold-300 transition-colors">
               {campaign.brand}
             </h3>
 
-            {/* C. Campaign Headline: Directly Underneath Brand Name */}
-            <h4 className="font-display text-xl sm:text-2xl font-semibold text-offwhite-200 mt-2">
+            {/* C. Campaign Headline */}
+            <h4 className="font-display text-base sm:text-lg font-semibold text-offwhite-200 mt-1">
               {campaign.title}
             </h4>
           </div>
 
           {/* D. Campaign Description */}
-          <p className="text-sm text-offwhite-300 leading-relaxed font-normal max-w-xl">
+          <p className="text-sm text-offwhite-300 leading-relaxed font-normal">
             {campaign.concept}
           </p>
 
           {/* E. Design Indicator & F. Interactive Design Gallery */}
-          <div className="pt-2 border-t border-teal-800/60 space-y-3">
-            <p className="text-xs font-mono font-semibold uppercase tracking-wider text-gold-400">
-              DESIGN {selectedArtboardIndex + 1} OF {campaign.artboards.length}
-            </p>
+          <div className="pt-3 border-t border-teal-800/60 space-y-2.5">
+            <div className="flex items-center justify-between text-[11px] font-mono font-semibold uppercase tracking-wider text-gold-400">
+              <span>DESIGN {selectedArtboardIndex + 1} OF {campaign.artboards.length}</span>
+              <span className="text-offwhite-400 font-sans normal-case text-xs truncate max-w-[200px]">
+                {activeArtboard.title}
+              </span>
+            </div>
 
             {/* Thumbnails Gallery */}
-            <div className="flex flex-wrap gap-2.5 pt-1">
+            <div className="flex flex-wrap gap-2.5 pt-0.5">
               {campaign.artboards.map((artboard, idx) => (
                 <button
                   key={artboard.id}
                   onClick={() => setSelectedArtboardIndex(idx)}
                   aria-label={`Select design ${idx + 1}`}
-                  className={`relative w-14 sm:w-16 md:w-20 aspect-[4/5] rounded overflow-hidden border-2 transition-all duration-200 ${
+                  className={`relative w-12 sm:w-14 aspect-[4/5] rounded overflow-hidden border-2 transition-all duration-200 ${
                     selectedArtboardIndex === idx
                       ? 'border-gold-500 scale-105 shadow-md shadow-gold-500/20 opacity-100 ring-1 ring-gold-400/50'
                       : 'border-teal-800/80 opacity-60 hover:opacity-100 hover:border-teal-700'
@@ -93,20 +93,18 @@ export default function CampaignCard({ campaign, index = 0, onSelectArtboard }) 
               ))}
             </div>
           </div>
-
-          {/* Lightbox / Action Trigger */}
-          <div className="pt-3">
-            <button
-              onClick={() => onSelectArtboard(campaign, selectedArtboardIndex)}
-              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold-400 hover:text-gold-300 transition-colors group"
-            >
-              <span>Open Full View</span>
-              <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </button>
-          </div>
-
         </div>
+      </div>
 
+      {/* Lightbox / Action Trigger */}
+      <div className="pt-5 mt-4 border-t border-teal-900/50">
+        <button
+          onClick={() => onSelectArtboard(campaign, selectedArtboardIndex)}
+          className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold-400 hover:text-gold-300 transition-colors group/btn"
+        >
+          <span>Open Full View</span>
+          <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+        </button>
       </div>
     </motion.article>
   );

@@ -170,10 +170,14 @@ export default function Portfolio() {
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              style={{
+                backgroundColor:
+                  selectedIndustry !== 'all' ? undefined : 'rgba(0, 26, 36, 0.95)',
+              }}
               className={`px-4 py-2 rounded-sm text-xs font-bold uppercase tracking-wider transition-colors flex items-center gap-2 border ${
                 selectedIndustry !== 'all'
                   ? 'bg-gold-500 text-teal-950 border-gold-400 shadow-md'
-                  : 'bg-teal-900/50 hover:bg-teal-900 text-offwhite-200 hover:text-offwhite-100 border-teal-800'
+                  : 'hover:bg-teal-900 text-offwhite-200 hover:text-offwhite-100 border-teal-700/80 shadow-lg shadow-black/40'
               }`}
               aria-expanded={isDropdownOpen}
               aria-label="Filter by industry"
@@ -196,9 +200,10 @@ export default function Portfolio() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 8, scale: 0.98 }}
                   transition={{ duration: 0.18, ease: PREMIUM_EASE }}
-                  className="absolute right-0 sm:left-0 mt-2 w-80 sm:w-96 rounded-xl bg-teal-950/98 backdrop-blur-2xl border border-teal-700/80 shadow-2xl shadow-black/80 z-50 p-2 flex flex-col gap-1 max-h-[85vh] overflow-y-auto"
+                  style={{ backgroundColor: 'rgba(0, 26, 36, 0.97)' }}
+                  className="absolute right-0 sm:left-0 mt-2 w-80 sm:w-96 rounded-xl backdrop-blur-2xl border border-teal-600/90 shadow-2xl shadow-black/95 z-50 p-2 flex flex-col gap-1 max-h-[85vh] overflow-y-auto"
                 >
-                  <div className="px-3 py-2 text-[10px] font-bold tracking-widest uppercase text-offwhite-400 border-b border-teal-900/80 flex items-center justify-between">
+                  <div className="px-3 py-2 text-[10px] font-bold tracking-widest uppercase text-offwhite-300 border-b border-teal-800/80 flex items-center justify-between">
                     <span>Filter by Industry</span>
                     {selectedIndustry !== 'all' && (
                       <button
@@ -220,14 +225,14 @@ export default function Portfolio() {
                     }}
                     className={`text-left px-3.5 py-2.5 rounded-lg transition-colors flex flex-col ${
                       selectedIndustry === 'all'
-                        ? 'bg-gold-500/15 text-gold-400 font-bold border border-gold-500/30'
-                        : 'text-offwhite-200 hover:bg-teal-900/50'
+                        ? 'bg-gold-500/20 text-gold-400 font-bold border border-gold-500/40 shadow-sm'
+                        : 'text-offwhite-100 hover:bg-teal-900/70'
                     }`}
                   >
-                    <span className="text-xs font-semibold uppercase tracking-wider">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-offwhite-100">
                       All Industries ({campaigns.length + flyers.length})
                     </span>
-                    <span className="text-[11px] text-offwhite-400 mt-0.5">
+                    <span className="text-[11px] text-offwhite-300 mt-0.5">
                       Show all campaigns and flyers across all industries.
                     </span>
                   </button>
@@ -246,8 +251,8 @@ export default function Portfolio() {
                         }}
                         className={`text-left px-3.5 py-2.5 rounded-lg transition-colors flex flex-col ${
                           isSelected
-                            ? 'bg-gold-500/15 text-gold-400 font-bold border border-gold-500/30'
-                            : 'text-offwhite-200 hover:bg-teal-900/50'
+                            ? 'bg-gold-500/20 text-gold-400 font-bold border border-gold-500/40 shadow-sm'
+                            : 'text-offwhite-100 hover:bg-teal-900/70'
                         }`}
                       >
                         <div className="flex items-center justify-between">
@@ -258,7 +263,7 @@ export default function Portfolio() {
                             ({matchCount})
                           </span>
                         </div>
-                        <span className="text-[11px] text-offwhite-400 mt-0.5 leading-snug">
+                        <span className="text-[11px] text-offwhite-300 mt-0.5 leading-snug">
                           {ind.desc}
                         </span>
                       </button>
@@ -290,7 +295,8 @@ export default function Portfolio() {
                 </span>
               </motion.div>
 
-              <div className="space-y-8">
+              {/* 2-Column Desktop Grid: Two Portfolio Samples Per Row */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
                 {filteredCampaigns.map((campaign, index) => (
                   <CampaignCard
                     key={campaign.id}
@@ -321,7 +327,8 @@ export default function Portfolio() {
                 </span>
               </motion.div>
 
-              <div className="space-y-8">
+              {/* 2-Column Desktop Grid: Two Portfolio Samples Per Row */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
                 {filteredFlyers.map((flyer, index) => (
                   <FlyerCard
                     key={flyer.id}
