@@ -12,10 +12,10 @@ export default function FlyerCard({ flyer, index = 0, onSelectFlyer }) {
       transition={{ duration: 0.7, delay: Math.min(index * 0.1, 0.25), ease: PREMIUM_EASE }}
       className="bg-teal-900/30 border border-teal-800/80 hover:border-gold-500/40 rounded-lg p-6 sm:p-8 lg:p-10 transition-colors"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         {/* Left Column: Large Featured Project Image */}
-        <div className="lg:col-span-5">
+        <div className="md:col-span-5">
           <div
             className="relative aspect-[4/5] rounded overflow-hidden bg-teal-950 border border-teal-800/80 cursor-pointer group shadow-xl"
             onClick={() => onSelectFlyer(flyer)}
@@ -36,7 +36,7 @@ export default function FlyerCard({ flyer, index = 0, onSelectFlyer }) {
         </div>
 
         {/* Right Column: Project Information */}
-        <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
+        <div className="md:col-span-7 flex flex-col justify-between space-y-6">
           
           {/* A. Project Tag: Category */}
           <div className="flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-gold-400">

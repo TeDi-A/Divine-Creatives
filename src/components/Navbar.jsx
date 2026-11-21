@@ -4,13 +4,47 @@ import { Menu, X, ArrowUpRight } from 'lucide-react';
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
+    let rafId;
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 30);
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const docHeight = document.documentElement.scrollHeight;
+
+        if (windowHeight + scrollY >= docHeight - 120) {
+          setActiveSection('contact');
+          return;
+        }
+
+        const sectionIds = ['services', 'work', 'about', 'contact'];
+        const detectionLine = windowHeight * 0.38;
+        let matched = '';
+
+        for (const id of sectionIds) {
+          const el = document.getElementById(id);
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            if (rect.top <= detectionLine && rect.bottom > detectionLine) {
+              matched = id;
+              break;
+            }
+          }
+        }
+        setActiveSection(matched);
+      });
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const navLinks = [
@@ -44,17 +78,28 @@ export default function Navbar() {
           </span>
         </a>
 
-        {/* Desktop Navigation Links */}
+        {/* Desktop Navigation Links with Active Scroll Highlighting */}
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium tracking-wide text-offwhite-300 hover:text-gold-400 transition-colors relative py-1"
-            >
-              {link.name}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const linkId = link.href.replace('#', '');
+            const isActive = activeSection === linkId;
+            return (
+              <a
+                key={link.name}
+                href={link.href}
+                className={`text-sm tracking-wide transition-colors relative py-1 ${
+                  isActive
+                    ? 'text-gold-400 font-bold'
+                    : 'text-offwhite-300 hover:text-gold-400 font-medium'
+                }`}
+              >
+                <span>{link.name}</span>
+                {isActive && (
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gold-400 rounded-full shadow-sm" />
+                )}
+              </a>
+            );
+          })}
         </nav>
 
         {/* Desktop CTA */}

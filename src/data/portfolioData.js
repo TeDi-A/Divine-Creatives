@@ -1,13 +1,28 @@
-export const FLYER_CATEGORIES = [
-  "Real Estate",
-  "Fitness & Gym",
-  "Bakery",
-  "Grill",
-  "Event Decor",
-  "Skincare",
-  "Fastfood",
-  "Event Catering",
-  "Restaurant"
+export const INDUSTRIES = [
+  {
+    name: "Food & Beverage",
+    desc: "Restaurants, catering, snacks, drinks, bakeries, food products."
+  },
+  {
+    name: "Fashion & Lifestyle",
+    desc: "Clothing, footwear, accessories, beauty and personal lifestyle brands."
+  },
+  {
+    name: "Beauty & Personal Care",
+    desc: "Skincare, cosmetics, haircare, grooming products."
+  },
+  {
+    name: "Consumer Goods",
+    desc: "Household products, everyday goods, packaged products and general merchandise."
+  },
+  {
+    name: "Events & Entertainment",
+    desc: "Event promotions, parties, celebrations, shows and entertainment."
+  },
+  {
+    name: "Professional & Local Services",
+    desc: "Logistics, laundry, delivery, education, hospitality and other service businesses."
+  }
 ];
 
 export const portfolioManifest = {
@@ -18,7 +33,8 @@ export const portfolioManifest = {
     gold: "#D4AF37",
     offWhite: "#F5F5F2",
   },
-  categories: FLYER_CATEGORIES,
+  industries: INDUSTRIES,
+  categories: INDUSTRIES.map((i) => i.name),
   filterTabs: [
     { id: "all", label: "All Work" },
     { id: "campaigns", label: "Campaigns" },
@@ -31,7 +47,7 @@ export const portfolioManifest = {
       title: "Come Home to Bright",
       subtitle: "Cleaning Campaign",
       tagline: "Come Home to Bright",
-      industry: "Cleaning service",
+      industry: "Professional & Local Services",
       coverImage: "/Portfolio Assets/Campaigns/BrightHomes/Artboard1.png",
       assetCount: 6,
       concept: "A 6-part campaign showing real cleaning moments, from everyday home relaxation to moving day and event cleanups.",
@@ -86,7 +102,7 @@ export const portfolioManifest = {
       title: "Bringing Packages Closer",
       subtitle: "Logistics Campaign",
       tagline: "Bringing Your Packages closer to the People who matter",
-      industry: "Logistics",
+      industry: "Professional & Local Services",
       coverImage: "/Portfolio Assets/Campaigns/Relaya/Artboard1.png",
       assetCount: 4,
       concept: "A 4-part campaign addressing delivery confidence, package safety, doorstep handover, and business dispatch.",
@@ -127,7 +143,7 @@ export const portfolioManifest = {
       title: "Morning Flavors & Fresh Starts",
       subtitle: "Breakfast Campaign",
       tagline: "Start Every Morning Right",
-      industry: "Breakfast & Dining",
+      industry: "Food & Beverage",
       coverImage: "/Portfolio Assets/Campaigns/DAYBREAK/Artboard1.png",
       assetCount: 6,
       concept: "A 6-part campaign capturing morning routines, signature Nigerian breakfasts, and fresh wholesome dishes.",
@@ -182,7 +198,7 @@ export const portfolioManifest = {
       title: "The Real Taste of Suya",
       subtitle: "Grill Campaign",
       tagline: "Fire, Spice & Authentic Cuts",
-      industry: "Grill & Street Food",
+      industry: "Food & Beverage",
       coverImage: "/Portfolio Assets/Campaigns/SUYASPOT/Artboard1.png",
       assetCount: 4,
       concept: "A 4-part advertising campaign celebrating smoky barbecue cuts, fiery pepper blends, and evening dining.",
@@ -223,7 +239,7 @@ export const portfolioManifest = {
       title: "Spice Up Snack Time",
       subtitle: "Snack Campaign",
       tagline: "Bite into bold crunch",
-      industry: "Snacks",
+      industry: "Food & Beverage",
       coverImage: "/Portfolio Assets/Campaigns/GBAMBITES/Artboard4.png",
       assetCount: 8,
       concept: "An 8-part social and promotional campaign for plantain chips with bold colors, crunchy hooks, and snack-time cravings.",
@@ -292,7 +308,7 @@ export const portfolioManifest = {
       title: "Show Up Sharp. Every Time.",
       subtitle: "Laundry Campaign",
       tagline: "Show up sharp. Every time.",
-      industry: "Laundry",
+      industry: "Professional & Local Services",
       coverImage: "/Portfolio Assets/Campaigns/EasyWash/Artboard2.png",
       assetCount: 5,
       concept: "A 5-part campaign illustrating fabric care, stain removal, fast pickup, and professional crisp finishes.",
@@ -340,7 +356,7 @@ export const portfolioManifest = {
       title: "Finger Foods That Steal the Show",
       subtitle: "Finger Foods Campaign",
       tagline: "Finger Foods That Steal the Show",
-      industry: "Finger foods",
+      industry: "Food & Beverage",
       coverImage: "/Portfolio Assets/Campaigns/ChopsAffairs/Artboard1.png",
       assetCount: 2,
       concept: "A 2-part party platter campaign focusing on celebration catering, spring rolls, samosas, and puff-puff bites.",
@@ -360,6 +376,40 @@ export const portfolioManifest = {
           headline: "The Life of Every Nigerian Party.",
         }
       ]
+    },
+    {
+      id: "dailytees-plain-tees",
+      brand: "DailyTees",
+      title: "Your Everyday Plain Tees Done Right",
+      subtitle: "Streetwear Launch Campaign",
+      tagline: "Meet Our First Collection",
+      industry: "Fashion & Lifestyle",
+      coverImage: "/Portfolio Assets/Campaigns/DAILYTEES/Artboard1.png",
+      assetCount: 3,
+      concept: "A 3-part launch campaign showcasing premium everyday plain tees with attention to quality, fit, and 6 versatile colorways.",
+      artboards: [
+        {
+          id: "dt-01",
+          order: 1,
+          title: "Everyday Plain Tees",
+          image: "/Portfolio Assets/Campaigns/DAILYTEES/Artboard1.png",
+          headline: "Your Everyday Plain Tees Done Right.",
+        },
+        {
+          id: "dt-02",
+          order: 2,
+          title: "Quality In The Details",
+          image: "/Portfolio Assets/Campaigns/DAILYTEES/Artboard2.png",
+          headline: "Quality That Makes The Difference.",
+        },
+        {
+          id: "dt-03",
+          order: 3,
+          title: "Six Colours, Same Confidence",
+          image: "/Portfolio Assets/Campaigns/DAILYTEES/Artboard3.png",
+          headline: "Six Colours, Same Everyday Confidence.",
+        }
+      ]
     }
   ],
   flyers: [
@@ -368,8 +418,7 @@ export const portfolioManifest = {
       brand: "Ego Properties",
       title: "Luxury Real Estate",
       headline: "Luxury Living, Prime Locations",
-      category: "Real Estate",
-      industry: "Real Estate",
+      industry: "Professional & Local Services",
       image: "/Portfolio Assets/Flyers/EGOPROPERTIES.png",
       description: "High-impact property investment flyer featuring luxury duplexes and verified land titles."
     },
@@ -378,8 +427,7 @@ export const portfolioManifest = {
       brand: "Flux Fitness",
       title: "Fitness & Strength",
       headline: "Transform Your Mind & Body",
-      category: "Fitness & Gym",
-      industry: "Fitness & Gym",
+      industry: "Fashion & Lifestyle",
       image: "/Portfolio Assets/Flyers/FLUXFITNESS.png",
       description: "Modern gym membership and fitness training promotional flyer with membership offers."
     },
@@ -388,8 +436,7 @@ export const portfolioManifest = {
       brand: "Banana Bliss",
       title: "Fresh Banana Bread",
       headline: "Every Slice, A Little Bliss",
-      category: "Bakery",
-      industry: "Bakery",
+      industry: "Food & Beverage",
       image: "/Portfolio Assets/Flyers/Banana_Bliss.png",
       description: "Promotional flyer for fresh banana walnut bread with clear ordering channels."
     },
@@ -398,8 +445,7 @@ export const portfolioManifest = {
       brand: "Baked By Bisi",
       title: "Artisan Bakes",
       headline: "Oven Fresh Every Single Morning",
-      category: "Bakery",
-      industry: "Bakery",
+      industry: "Food & Beverage",
       image: "/Portfolio Assets/Flyers/BAKEDBYBISI.png",
       description: "Artisan bread and pastry flyer highlighting fresh oven bakes and customized cake orders."
     },
@@ -408,8 +454,7 @@ export const portfolioManifest = {
       brand: "GrillHouse",
       title: "Weekend Grill Special",
       headline: "Weekend Grill Special",
-      category: "Grill",
-      industry: "Grill",
+      industry: "Food & Beverage",
       image: "/Portfolio Assets/Flyers/GrillHouse_Weekend_Special.png",
       description: "Weekend promo flyer showcasing a burger, fries, and drink meal combo."
     },
@@ -417,29 +462,26 @@ export const portfolioManifest = {
       id: "flyer-bitesandbanter",
       brand: "Bites & Banter",
       title: "Dining & Drinks",
-      headline: "Good Food, Great Cocktails, Chill Vibes",
-      category: "Restaurant",
-      industry: "Restaurant",
+      headline: "Every Bite a Vibe",
+      industry: "Food & Beverage",
       image: "/Portfolio Assets/Flyers/BITESANDBANTER.png",
-      description: "Promotional dining flyer showcasing signature platters, cocktails, and night lounge dining."
+      description: "Promotional flyer for a Nigerian small chops brand featuring golden puff puff, crispy samosas, spring rolls, and party platters."
     },
     {
       id: "flyer-cravings-orezi",
       brand: "Cravings by Orezi",
-      title: "Sweet Cravings",
-      headline: "Satisfy Every Sweet Craving",
-      category: "Bakery",
-      industry: "Bakery",
+      title: "Beginner Baking Training",
+      headline: "6 Weeks Beginner Baking Training",
+      industry: "Food & Beverage",
       image: "/Portfolio Assets/Flyers/CRAVINGS_BY_OREZI.png",
-      description: "Dessert and sweet treats promo flyer highlighting cupcakes, parfaits, and finger bites."
+      description: "Promotional flyer for a hands-on beginner baking masterclass covering cakes, pastries, snack-making, and professional decorating."
     },
     {
       id: "flyer-crumbs-and-co",
       brand: "Crumbs & Co",
       title: "Artisan Pastry",
       headline: "Sweet Moments, Baked with Love",
-      category: "Bakery",
-      industry: "Bakery",
+      industry: "Food & Beverage",
       image: "/Portfolio Assets/Flyers/CRUMBS_AND_CO.png",
       description: "Cafe and confectionery promotional flyer for daily fresh coffee and croissant specials."
     },
@@ -448,8 +490,7 @@ export const portfolioManifest = {
       brand: "Plush Events",
       title: "Event Decor & Rentals",
       headline: "Your Event, Beautifully Done",
-      category: "Event Decor",
-      industry: "Event Decor",
+      industry: "Events & Entertainment",
       image: "/Portfolio Assets/Flyers/Plush_Events_Decor.png",
       description: "Service flyer displaying hall setups, floral decor, stage design, and party rentals."
     },
@@ -458,8 +499,7 @@ export const portfolioManifest = {
       brand: "Pure Shea",
       title: "Natural Skincare",
       headline: "Pure Glow, Pure Moisture",
-      category: "Skincare",
-      industry: "Skincare",
+      industry: "Beauty & Personal Care",
       image: "/Portfolio Assets/Flyers/PURESHEA.png",
       description: "Raw organic shea butter and natural skincare promo flyer for radiant skin."
     },
@@ -468,8 +508,7 @@ export const portfolioManifest = {
       brand: "Wrap It Up",
       title: "Gourmet Wraps",
       headline: "Loaded Shawarmas & Juicy Grills",
-      category: "Fastfood",
-      industry: "Fastfood",
+      industry: "Food & Beverage",
       image: "/Portfolio Assets/Flyers/WRAPITUP.png",
       description: "Fast casual promo flyer for loaded gourmet shawarmas and quick bite combos."
     },
@@ -478,8 +517,7 @@ export const portfolioManifest = {
       brand: "Zest Bakehouse",
       title: "Custom Cakes & Celebration Desserts",
       headline: "Baked for Your Moments",
-      category: "Bakery",
-      industry: "Bakery",
+      industry: "Food & Beverage",
       image: "/Portfolio Assets/Flyers/ZEST.png",
       description: "Custom birthday cakes, wedding cakes, cupcake towers, and celebration desserts crafted for special occasions."
     },
@@ -488,8 +526,7 @@ export const portfolioManifest = {
       brand: "Kòkò Kitchen",
       title: "Event Catering & Platters",
       headline: "Freshly Baked for Your Weekend",
-      category: "Event Catering",
-      industry: "Event Catering",
+      industry: "Food & Beverage",
       image: "/Portfolio Assets/Flyers/KOKO.jpg",
       description: "Event catering and artisan party snack platters featuring meat pies, sausage rolls, scotch eggs, and puff puff."
     },
@@ -498,10 +535,18 @@ export const portfolioManifest = {
       brand: "Nkechi's Kitchen",
       title: "Authentic Meals",
       headline: "Authentic Home Cooking Everyday",
-      category: "Restaurant",
-      industry: "Restaurant",
+      industry: "Food & Beverage",
       image: "/Portfolio Assets/Flyers/NKECHI.png",
       description: "Traditional home-cooked Nigerian dishes and authentic dining meal prep flyer."
+    },
+    {
+      id: "flyer-dell",
+      brand: "Dell",
+      title: "Dell EXP360 Pro",
+      headline: "Experience the New Multipurpose Laptop",
+      industry: "Consumer Goods",
+      image: "/Portfolio Assets/Flyers/DELL.png",
+      description: "High-tech convertible 2-in-1 laptop promotional flyer highlighting creative workflow adaptability."
     }
   ],
   services: [
