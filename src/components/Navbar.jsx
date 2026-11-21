@@ -22,10 +22,11 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      style={{ backgroundColor: isScrolled || mobileMenuOpen ? '#001A24' : 'transparent' }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
         isScrolled || mobileMenuOpen
-          ? 'bg-[#001A24] backdrop-blur-md py-4 border-b border-teal-800/60 shadow-xl shadow-teal-950/50'
-          : 'bg-transparent py-6'
+          ? 'py-4 border-b border-teal-800/60 shadow-xl shadow-teal-950/50'
+          : 'py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
@@ -79,7 +80,10 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#001A24] border-t border-b border-teal-800 px-6 py-6 transition-all shadow-2xl">
+        <div
+          style={{ backgroundColor: '#001A24' }}
+          className="md:hidden w-full border-t border-b border-teal-800 px-6 py-6 shadow-2xl"
+        >
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <a

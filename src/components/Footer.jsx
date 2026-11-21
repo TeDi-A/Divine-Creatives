@@ -1,5 +1,6 @@
 import React from 'react';
-import { ArrowUp, Instagram, MessageSquare } from 'lucide-react';
+import { ArrowUp, Instagram } from 'lucide-react';
+import WhatsAppIcon from './icons/WhatsAppIcon';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -34,7 +35,7 @@ export default function Footer() {
               className="w-9 h-9 rounded-sm bg-teal-900/80 border border-teal-800 hover:border-emerald-500 text-offwhite-300 hover:text-emerald-400 flex items-center justify-center transition-colors"
               aria-label="WhatsApp"
             >
-              <MessageSquare className="w-4 h-4" />
+              <WhatsAppIcon className="w-4 h-4" />
             </a>
             <a
               href="https://instagram.com"

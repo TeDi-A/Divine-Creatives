@@ -18,29 +18,53 @@ export default function ProjectLightbox({ activeItem, onClose, onNavigate }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-teal-950/95 backdrop-blur-md p-4 sm:p-6 lg:p-8"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-teal-950/95 backdrop-blur-md p-4 sm:p-6"
       onClick={onClose}
     >
       <div
-        className="relative max-w-5xl w-full max-h-[90vh] bg-teal-900/90 border border-teal-700 rounded-lg shadow-2xl flex flex-col lg:flex-row overflow-hidden"
+        className="relative max-w-4xl w-full max-h-[92vh] bg-teal-900/95 border border-teal-700/80 rounded-lg shadow-2xl flex flex-col items-center overflow-hidden p-5 sm:p-7"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2 rounded-full bg-teal-950/80 border border-teal-700 text-offwhite-200 hover:text-gold-400 transition-colors"
-          aria-label="Close"
-        >
-          <X className="w-5 h-5" />
-        </button>
+        {/* Top Header Bar: Clean Brand & Campaign Context */}
+        <div className="w-full flex items-center justify-between pb-3.5 border-b border-teal-800/80 mb-3">
+          <div className="flex items-center gap-3">
+            <span className="px-3 py-1 rounded bg-teal-800 text-offwhite-100 text-xs font-semibold uppercase">
+              {activeItem.brand}
+            </span>
+            {isCampaign ? (
+              <span className="text-sm font-semibold text-gold-400 font-display">
+                {activeItem.campaignTitle}
+              </span>
+            ) : (
+              <span className="text-sm font-semibold text-gold-400 font-display">
+                {activeItem.headline || activeItem.title}
+              </span>
+            )}
+          </div>
 
-        {/* Left: Image (4:5 native) */}
-        <div className="relative flex-1 bg-teal-950 flex items-center justify-center p-4 sm:p-6 min-h-[350px] lg:min-h-[520px]">
-          <div className="relative h-full max-h-[75vh] aspect-[4/5] rounded overflow-hidden border border-teal-800">
+          <div className="flex items-center gap-4">
+            {isCampaign && (
+              <span className="text-xs text-offwhite-300 font-mono">
+                {activeItem.order} / {activeItem.totalInCampaign}
+              </span>
+            )}
+            <button
+              onClick={onClose}
+              className="p-1.5 rounded-full bg-teal-950/80 border border-teal-700 text-offwhite-200 hover:text-gold-400 transition-colors"
+              aria-label="Close"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Center: Full Visual Display with Clean Navigation */}
+        <div className="relative w-full flex-1 flex items-center justify-center overflow-hidden my-auto py-2">
+          <div className="relative max-h-[68vh] aspect-[4/5] rounded overflow-hidden shadow-2xl border border-teal-800">
             <img
               src={activeItem.image}
-              alt={activeItem.title}
-              className="w-full h-full object-contain bg-black/40"
+              alt={activeItem.title || activeItem.brand}
+              className="w-full h-full object-contain"
             />
           </div>
 
@@ -49,15 +73,15 @@ export default function ProjectLightbox({ activeItem, onClose, onNavigate }) {
             <>
               <button
                 onClick={() => onNavigate(-1)}
-                className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-teal-950/80 border border-teal-700 text-offwhite-100 hover:text-gold-400 transition-all"
-                aria-label="Previous"
+                className="absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 rounded-full bg-teal-950/90 border border-teal-700 text-offwhite-100 hover:text-gold-400 hover:scale-105 transition-all shadow-lg"
+                aria-label="Previous Design"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button
                 onClick={() => onNavigate(1)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-teal-950/80 border border-teal-700 text-offwhite-100 hover:text-gold-400 transition-all"
-                aria-label="Next"
+                className="absolute right-1 sm:right-4 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 rounded-full bg-teal-950/90 border border-teal-700 text-offwhite-100 hover:text-gold-400 hover:scale-105 transition-all shadow-lg"
+                aria-label="Next Design"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
@@ -65,63 +89,18 @@ export default function ProjectLightbox({ activeItem, onClose, onNavigate }) {
           )}
         </div>
 
-        {/* Right: Info Panel */}
-        <div className="w-full lg:w-80 p-6 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-teal-800 overflow-y-auto">
-          <div className="space-y-4">
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="px-2.5 py-0.5 rounded bg-teal-800 text-offwhite-100 text-xs font-semibold uppercase">
-                {activeItem.brand}
-              </span>
-              <span className="px-2 py-0.5 rounded bg-teal-950 text-gold-400 text-xs font-mono">
-                {isCampaign ? `Design ${activeItem.order} of ${activeItem.totalInCampaign}` : 'Flyer'}
-              </span>
-            </div>
-
-            {isCampaign && (
-              <div>
-                <p className="text-[11px] uppercase tracking-wider text-offwhite-400">Campaign</p>
-                <p className="text-sm font-semibold text-gold-400">{activeItem.campaignTitle}</p>
-              </div>
-            )}
-
-            <div>
-              <h3 className="font-display text-xl text-offwhite-100 font-bold leading-snug">
-                "{activeItem.headline || activeItem.title}"
-              </h3>
-              {activeItem.theme && (
-                <p className="text-xs text-gold-400 mt-1 font-medium">
-                  {activeItem.theme}
-                </p>
-              )}
-            </div>
-
-            <p className="text-xs text-offwhite-300 leading-relaxed font-normal">
-              {activeItem.copy || activeItem.description}
-            </p>
-
-            <div className="pt-3 border-t border-teal-800/60 space-y-1 text-xs">
-              <div className="flex justify-between">
-                <span className="text-offwhite-400">Dimensions</span>
-                <span className="text-offwhite-200 font-mono">1080 × 1350 px (4:5)</span>
-              </div>
-              {activeItem.cta && (
-                <div className="flex justify-between">
-                  <span className="text-offwhite-400">CTA</span>
-                  <span className="text-gold-400 font-semibold">{activeItem.cta}</span>
-                </div>
-              )}
-            </div>
-          </div>
-
-          <div className="pt-5 mt-5 border-t border-teal-800/80">
-            <a
-              href="#contact"
-              onClick={onClose}
-              className="w-full flex items-center justify-center py-2.5 rounded-sm bg-gold-500 hover:bg-gold-400 text-teal-950 font-bold text-xs tracking-wider uppercase transition-colors"
-            >
-              <span>Get Similar Design</span>
-            </a>
-          </div>
+        {/* Bottom Bar: Keyboard Hint & Contact CTA */}
+        <div className="w-full pt-3.5 border-t border-teal-800/80 flex items-center justify-between text-xs text-offwhite-400">
+          <span className="hidden sm:inline">
+            {isCampaign ? 'Use arrow keys or click buttons to browse all designs' : 'Promotional flyer design'}
+          </span>
+          <a
+            href="#contact"
+            onClick={onClose}
+            className="px-4 py-2 rounded-sm bg-gold-500 hover:bg-gold-400 text-teal-950 font-bold uppercase tracking-wider transition-colors ml-auto sm:ml-0"
+          >
+            Start a Project
+          </a>
         </div>
       </div>
     </div>

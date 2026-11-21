@@ -116,9 +116,6 @@ export default function CampaignCard({ campaign, index = 0, onSelectArtboard }) 
               <span>View All {campaign.assetCount} Designs</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </button>
-            <span className="text-[11px] text-offwhite-400 font-mono">
-              1080 × 1350 px
-            </span>
           </div>
         </div>
 

@@ -40,7 +40,6 @@ export default function FlyerCard({ flyer, index = 0, onSelectFlyer }) {
         <div className="space-y-1.5">
           <div className="flex items-center justify-between text-xs text-offwhite-400">
             <span className="text-gold-400 font-medium">{flyer.industry}</span>
-            <span className="font-mono text-[11px]">1080 × 1350 px</span>
           </div>
 
           <h3 className="font-display text-lg text-offwhite-100 font-semibold leading-snug">
@@ -61,9 +60,6 @@ export default function FlyerCard({ flyer, index = 0, onSelectFlyer }) {
           <span>View Full</span>
           <ArrowUpRight className="w-3.5 h-3.5" />
         </button>
-        <span className="text-[11px] font-medium text-offwhite-300">
-          {flyer.cta}
-        </span>
       </div>
     </motion.article>
   );

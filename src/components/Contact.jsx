@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { MessageSquare, ArrowUpRight, Instagram, Send } from 'lucide-react';
+import { ArrowUpRight, Instagram, Send } from 'lucide-react';
+import WhatsAppIcon from './icons/WhatsAppIcon';
 import { motion } from 'framer-motion';
 import { PREMIUM_EASE } from '../utils/animations';
 
@@ -33,10 +34,10 @@ export default function Contact() {
           className="text-center max-w-2xl mx-auto space-y-4 mb-10"
         >
           <h2 className="font-display text-3xl sm:text-5xl text-offwhite-100 font-bold tracking-tight">
-            Let's Talk
+            Have a design project?
           </h2>
           <p className="text-base text-offwhite-300 font-normal leading-relaxed">
-            Have a design project or upcoming campaign? Send a message on WhatsApp or Instagram, or fill out the brief form to start a conversation.
+            Send a message on WhatsApp or Instagram, or fill out the brief form below to get started.
           </p>
         </motion.div>
 
@@ -57,7 +58,7 @@ export default function Contact() {
           >
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-sm bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
-                <MessageSquare className="w-5 h-5" />
+                <WhatsAppIcon className="w-5 h-5" />
               </div>
               <div className="text-left">
                 <p className="text-xs text-offwhite-400 uppercase tracking-wider font-medium">WhatsApp</p>

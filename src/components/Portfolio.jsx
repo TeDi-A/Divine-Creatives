@@ -82,7 +82,7 @@ export default function Portfolio() {
             Portfolio
           </h2>
           <p className="text-base text-offwhite-300 font-normal leading-relaxed">
-            Real designs created for clients, grouped into coordinated campaigns and single promotional flyers.
+            A collection of my work for brands.
           </p>
         </motion.div>
 
@@ -145,9 +145,6 @@ export default function Portfolio() {
                 <h3 className="font-display text-2xl text-offwhite-100 font-bold">
                   Campaigns
                 </h3>
-                <span className="text-xs text-offwhite-400 font-mono">
-                  {campaigns.length} Campaigns / 25 Designs
-                </span>
               </motion.div>
 
               <div className="space-y-8">
@@ -176,9 +173,6 @@ export default function Portfolio() {
                 <h3 className="font-display text-2xl text-offwhite-100 font-bold">
                   Flyers
                 </h3>
-                <span className="text-xs text-offwhite-400 font-mono">
-                  {flyers.length} Single Designs
-                </span>
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
