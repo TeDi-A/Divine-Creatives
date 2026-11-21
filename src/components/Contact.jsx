@@ -57,7 +57,7 @@ export default function Contact() {
             className="flex items-center justify-between p-4 rounded-xl bg-teal-900/35 border border-teal-800/80 hover:border-emerald-500/70 hover:bg-teal-900/50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-emerald-500/10 transition-all duration-300 group"
           >
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+              <div className="w-11 h-11 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
                 <WhatsAppIcon className="w-5 h-5" />
               </div>
               <div className="text-left">
@@ -78,7 +78,7 @@ export default function Contact() {
             className="flex items-center justify-between p-4 rounded-xl bg-teal-900/35 border border-teal-800/80 hover:border-pink-500/70 hover:bg-teal-900/50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-pink-500/10 transition-all duration-300 group"
           >
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-sm bg-pink-500/20 text-pink-400 flex items-center justify-center">
+              <div className="w-11 h-11 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center border border-pink-500/30">
                 <Instagram className="w-5 h-5" />
               </div>
               <div className="text-left">

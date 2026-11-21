@@ -32,7 +32,7 @@ export default function Footer() {
               href="https://wa.me/2349059977796"
               target="_blank"
               rel="noreferrer"
-              className="w-9 h-9 rounded-sm bg-emerald-500/10 border border-emerald-500/40 hover:border-emerald-400 text-emerald-400 hover:text-emerald-300 flex items-center justify-center transition-colors shadow-sm"
+              className="w-9 h-9 rounded-full bg-emerald-500/10 border border-emerald-500/40 hover:border-emerald-400 text-emerald-400 hover:text-emerald-300 flex items-center justify-center transition-colors shadow-sm"
               aria-label="WhatsApp"
             >
               <WhatsAppIcon className="w-4 h-4" />
@@ -41,7 +41,7 @@ export default function Footer() {
               href="https://instagram.com"
               target="_blank"
               rel="noreferrer"
-              className="w-9 h-9 rounded-sm bg-purple-500/10 border border-purple-500/40 hover:border-purple-400 text-purple-400 hover:text-purple-300 flex items-center justify-center transition-colors shadow-sm"
+              className="w-9 h-9 rounded-full bg-purple-500/10 border border-purple-500/40 hover:border-purple-400 text-purple-400 hover:text-purple-300 flex items-center justify-center transition-colors shadow-sm"
               aria-label="Instagram"
             >
               <Instagram className="w-4 h-4" />
