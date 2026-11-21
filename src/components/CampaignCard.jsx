@@ -64,12 +64,9 @@ export default function CampaignCard({ campaign, index = 0, onSelectArtboard }) 
 
           {/* E. Design Indicator & F. Interactive Design Gallery */}
           <div className="pt-2.5 border-t border-teal-800/60 space-y-2">
-            <div className="flex items-center justify-between text-[10px] font-mono font-semibold uppercase tracking-wider text-gold-400">
-              <span>DESIGN {selectedArtboardIndex + 1} OF {campaign.artboards.length}</span>
-              <span className="text-offwhite-400 font-sans normal-case text-[11px] truncate max-w-[150px]">
-                {activeArtboard.title}
-              </span>
-            </div>
+            <p className="text-[10px] font-mono font-semibold uppercase tracking-wider text-gold-400">
+              DESIGN {selectedArtboardIndex + 1} OF {campaign.artboards.length}
+            </p>
 
             {/* Thumbnails Gallery */}
             <div className="flex flex-wrap gap-2 pt-0.5">
