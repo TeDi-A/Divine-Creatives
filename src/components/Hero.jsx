@@ -78,27 +78,29 @@ export default function Hero() {
               I create clean, purposeful graphic design and visual marketing campaigns that help brands stand out, connect with customers, and drive sales.
             </motion.p>
 
-            {/* Action buttons: same row on mobile & centered */}
+            {/* Action buttons: Start a Project (Yellow CTA) & View Services (White outline) */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.28, ease: PREMIUM_EASE }}
               className="grid grid-cols-2 gap-3 w-full max-w-sm sm:max-w-none sm:flex sm:flex-row sm:items-center sm:justify-start sm:gap-4 pt-2"
             >
-              <a
-                href="#services"
-                className="group inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-7 py-3 sm:py-3.5 rounded-sm bg-gold-500 hover:bg-gold-400 text-teal-950 font-bold text-[11px] sm:text-xs tracking-wider uppercase transition-colors shadow-lg text-center"
-              >
-                <span>View Services</span>
-                <ArrowDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-y-0.5" />
-              </a>
-
+              {/* Primary CTA: Yellow Button */}
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-3 sm:py-3.5 rounded-sm border border-teal-700 hover:border-gold-500 bg-teal-900/60 hover:bg-teal-900 text-offwhite-100 font-semibold text-[11px] sm:text-xs tracking-wider uppercase transition-colors text-center"
+                className="group inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-7 py-3 sm:py-3.5 rounded-sm bg-gold-500 hover:bg-gold-400 text-teal-950 font-bold text-[11px] sm:text-xs tracking-wider uppercase transition-all shadow-lg hover:shadow-gold-500/20 text-center"
               >
                 <span>Start a Project</span>
-                <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-400" />
+                <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+
+              {/* Secondary CTA: White Outline & White Text */}
+              <a
+                href="#services"
+                className="group inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-3 sm:py-3.5 rounded-sm border border-offwhite-100/70 hover:border-offwhite-100 bg-white/5 hover:bg-white/10 text-offwhite-100 font-semibold text-[11px] sm:text-xs tracking-wider uppercase transition-all text-center"
+              >
+                <span>View Services</span>
+                <ArrowDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-y-0.5 text-offwhite-100" />
               </a>
             </motion.div>
 
