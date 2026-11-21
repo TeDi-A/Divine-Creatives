@@ -94,7 +94,7 @@ export default function Hero() {
                 href="#contact"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm border border-teal-700 hover:border-gold-500 bg-teal-900/60 hover:bg-teal-900 text-offwhite-100 font-semibold text-xs tracking-wider uppercase transition-colors"
               >
-                <span>Let's Talk</span>
+                <span>Start a Project</span>
                 <ArrowUpRight className="w-4 h-4 text-gold-400" />
               </a>
             </motion.div>
