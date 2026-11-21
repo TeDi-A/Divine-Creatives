@@ -104,24 +104,18 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.4, ease: PREMIUM_EASE }}
-              className="grid grid-cols-3 gap-6 pt-6 border-t border-teal-800/80 max-w-md"
+              className="grid grid-cols-2 gap-8 pt-6 border-t border-teal-800/80 max-w-sm"
             >
               <div>
-                <p className="font-display text-2xl sm:text-3xl text-gold-400 font-bold">28+</p>
+                <p className="font-display text-2xl sm:text-3xl text-gold-400 font-bold">50+</p>
                 <p className="text-xs text-offwhite-400 tracking-wide mt-0.5 uppercase font-medium">
-                  Designs Made
+                  Designs
                 </p>
               </div>
               <div>
-                <p className="font-display text-2xl sm:text-3xl text-offwhite-100 font-bold">5</p>
+                <p className="font-display text-2xl sm:text-3xl text-offwhite-100 font-bold">10+</p>
                 <p className="text-xs text-offwhite-400 tracking-wide mt-0.5 uppercase font-medium">
-                  Campaigns
-                </p>
-              </div>
-              <div>
-                <p className="font-display text-2xl sm:text-3xl text-gold-400 font-bold">100%</p>
-                <p className="text-xs text-offwhite-400 tracking-wide mt-0.5 uppercase font-medium">
-                  Original Work
+                  Industries
                 </p>
               </div>
             </motion.div>

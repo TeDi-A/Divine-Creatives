@@ -70,13 +70,13 @@ export default function Portfolio() {
   return (
     <section id="work" className="relative py-24 bg-teal-950/70 border-t border-teal-900/80">
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        {/* Section Header */}
+        {/* Section Header: Centered */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7, ease: PREMIUM_EASE }}
-          className="max-w-2xl mb-12 space-y-3"
+          className="max-w-2xl mx-auto mb-12 text-center space-y-3"
         >
           <h2 className="font-display text-3xl sm:text-5xl text-offwhite-100 font-bold tracking-tight">
             Portfolio
@@ -86,13 +86,13 @@ export default function Portfolio() {
           </p>
         </motion.div>
 
-        {/* Filter Buttons */}
+        {/* Filter Buttons: Centered */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, delay: 0.1, ease: PREMIUM_EASE }}
-          className="flex flex-wrap items-center gap-3 mb-12 border-b border-teal-800/80 pb-5"
+          className="flex flex-wrap items-center justify-center gap-3 mb-12 border-b border-teal-800/80 pb-5"
         >
           <button
             onClick={() => setActiveCategory('all')}
