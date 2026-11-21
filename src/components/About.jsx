@@ -19,7 +19,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="relative py-24 bg-teal-950 border-t border-teal-900/80">
+    <section id="about" className="relative py-24 bg-transparent border-t border-teal-900/40">
       <div className="relative max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header: Centered */}
         <motion.div
@@ -29,7 +29,7 @@ export default function About() {
           transition={{ duration: 0.7, ease: PREMIUM_EASE }}
           className="max-w-3xl mx-auto mb-14 text-center space-y-3"
         >
-          <h2 className="font-display text-3xl sm:text-5xl text-offwhite-100 font-bold tracking-tight">
+          <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight reflective-heading">
             About Me
           </h2>
           <p className="text-base sm:text-lg text-offwhite-300 font-normal leading-relaxed">
@@ -37,7 +37,7 @@ export default function About() {
           </p>
         </motion.div>
 
-        {/* 3 Pillars Grid */}
+        {/* 3 Pillars Grid with Micro-Interactions */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {pillars.map((item, idx) => (
             <motion.div
@@ -46,10 +46,10 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.7, delay: idx * 0.1, ease: PREMIUM_EASE }}
-              className="bg-teal-900/30 border border-teal-800/80 hover:border-gold-500/40 rounded-lg p-7 sm:p-8 transition-colors flex flex-col justify-between"
+              className="group bg-teal-900/25 hover:bg-teal-900/40 border border-teal-800/70 hover:border-gold-500/50 rounded-xl p-7 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-gold-500/5 flex flex-col justify-between"
             >
               <div>
-                <h3 className="font-display text-lg sm:text-xl font-bold text-gold-400 mb-3">
+                <h3 className="font-display text-lg sm:text-xl font-bold text-gold-400 mb-3 group-hover:text-gold-300 transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-sm text-offwhite-300 leading-relaxed font-normal">

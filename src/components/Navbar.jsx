@@ -49,17 +49,17 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Services', href: '#services' },
-    { name: 'Work', href: '#work' },
+    { name: 'Portfolio', href: '#work' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
 
   return (
     <header
-      style={{ backgroundColor: isScrolled || mobileMenuOpen ? '#001A24' : 'transparent' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+      style={{ backgroundColor: isScrolled || mobileMenuOpen ? 'rgba(0, 26, 36, 0.92)' : 'transparent' }}
+      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md transition-all duration-300 ${
         isScrolled || mobileMenuOpen
-          ? 'py-4 border-b border-teal-800/60 shadow-xl shadow-teal-950/50'
+          ? 'py-4 border-b border-teal-800/60 shadow-xl shadow-black/40'
           : 'py-6'
       }`}
     >

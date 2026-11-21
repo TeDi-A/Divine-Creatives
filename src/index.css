@@ -9,15 +9,24 @@
   }
   
   body {
-    background-color: #001A24;
+    background: linear-gradient(180deg, #002834 0%, #001E27 25%, #00151C 55%, #000E13 80%, #00080B 100%);
+    background-attachment: fixed;
     color: #F5F5F2;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
+    min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
   }
+}
+
+/* Subtle reflective metallic gradient heading style */
+.reflective-heading {
+  background: linear-gradient(180deg, #FFFFFF 15%, #F1F5F9 50%, #CBD5E1 85%, #94A3B8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Custom scrollbar */

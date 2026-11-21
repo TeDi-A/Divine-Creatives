@@ -4,14 +4,13 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import About from './components/About';
-import WhyWorkWithMe from './components/WhyWorkWithMe';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import MobileNavDock from './components/MobileNavDock';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-teal-950 text-offwhite-100 flex flex-col selection:bg-gold-500 selection:text-teal-950">
+    <div className="min-h-screen bg-transparent text-offwhite-100 flex flex-col selection:bg-gold-500 selection:text-teal-950">
       <Navbar />
       <main className="flex-grow">
         <Hero />
@@ -19,7 +18,6 @@ export default function App() {
         <Services />
         <Portfolio />
         <About />
-        <WhyWorkWithMe />
         <Contact />
       </main>
       <Footer />

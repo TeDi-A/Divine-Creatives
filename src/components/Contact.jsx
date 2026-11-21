@@ -22,7 +22,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 bg-teal-950 border-t border-teal-900/80">
+    <section id="contact" className="relative py-24 bg-transparent border-t border-teal-900/40">
       <div className="relative max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
         
         {/* Centered Header Focal Point */}
@@ -33,7 +33,7 @@ export default function Contact() {
           transition={{ duration: 0.7, ease: PREMIUM_EASE }}
           className="text-center max-w-2xl mx-auto space-y-4 mb-10"
         >
-          <h2 className="font-display text-3xl sm:text-5xl text-offwhite-100 font-bold tracking-tight">
+          <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight reflective-heading">
             Have a design project?
           </h2>
           <p className="text-base text-offwhite-300 font-normal leading-relaxed">
@@ -41,7 +41,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        {/* Centered Direct Contact Channels: WhatsApp & Instagram */}
+        {/* Centered Direct Contact Channels: WhatsApp & Instagram with Micro-interactions */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,10 +54,10 @@ export default function Contact() {
             href="https://wa.me/2349059977796?text=Hello%20Divine%20Creatives!%20I%20would%20like%20to%20discuss%20a%20design%20project%20for%20my%20brand."
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between p-4 rounded bg-teal-900/40 border border-teal-800 hover:border-emerald-500/60 transition-colors group"
+            className="flex items-center justify-between p-4 rounded-xl bg-teal-900/35 border border-teal-800/80 hover:border-emerald-500/70 hover:bg-teal-900/50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-emerald-500/10 transition-all duration-300 group"
           >
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-sm bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
                 <WhatsAppIcon className="w-5 h-5" />
               </div>
               <div className="text-left">
@@ -75,7 +75,7 @@ export default function Contact() {
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between p-4 rounded bg-teal-900/40 border border-teal-800 hover:border-pink-500/60 transition-colors group"
+            className="flex items-center justify-between p-4 rounded-xl bg-teal-900/35 border border-teal-800/80 hover:border-pink-500/70 hover:bg-teal-900/50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-pink-500/10 transition-all duration-300 group"
           >
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-sm bg-pink-500/20 text-pink-400 flex items-center justify-center">

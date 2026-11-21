@@ -102,7 +102,7 @@ export default function Portfolio() {
   };
 
   return (
-    <section id="work" className="relative py-24 bg-teal-950/70 border-t border-teal-900/80">
+    <section id="work" className="relative py-24 bg-transparent border-t border-teal-900/40">
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header: Centered */}
         <motion.div
@@ -112,7 +112,7 @@ export default function Portfolio() {
           transition={{ duration: 0.7, ease: PREMIUM_EASE }}
           className="max-w-2xl mx-auto mb-12 text-center space-y-3"
         >
-          <h2 className="font-display text-3xl sm:text-5xl text-offwhite-100 font-bold tracking-tight">
+          <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight reflective-heading">
             Portfolio
           </h2>
           <p className="text-base text-offwhite-300 font-normal leading-relaxed">
@@ -282,7 +282,7 @@ export default function Portfolio() {
                 transition={{ duration: 0.6, ease: PREMIUM_EASE }}
                 className="flex items-center justify-between border-b border-teal-800/60 pb-3"
               >
-                <h3 className="font-display text-2xl text-offwhite-100 font-bold">
+                <h3 className="font-display text-2xl font-bold reflective-heading">
                   Campaigns
                 </h3>
                 <span className="text-xs text-gold-400 font-semibold tracking-wide uppercase">
@@ -313,7 +313,7 @@ export default function Portfolio() {
                 transition={{ duration: 0.6, ease: PREMIUM_EASE }}
                 className="flex items-center justify-between border-b border-teal-800/60 pb-3"
               >
-                <h3 className="font-display text-2xl text-offwhite-100 font-bold">
+                <h3 className="font-display text-2xl font-bold reflective-heading">
                   Flyers
                 </h3>
                 <span className="text-xs text-gold-400 font-semibold tracking-wide uppercase">

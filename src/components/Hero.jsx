@@ -59,11 +59,14 @@ export default function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: PREMIUM_EASE }}
-              className="font-display text-4xl sm:text-6xl lg:text-[64px] leading-[1.1] text-offwhite-100 font-bold tracking-tight text-center lg:text-left"
+              className="font-display text-4xl sm:text-6xl lg:text-[64px] leading-[1.1] font-bold tracking-tight text-center lg:text-left"
             >
-              Designs that <br />
-              Communicate, <br />
-              Engage and <span className="text-gold-400">Sell.</span>
+              <span className="reflective-heading">
+                Designs that <br />
+                Communicate, <br />
+                Engage and{' '}
+              </span>
+              <span className="text-gold-400">Sell.</span>
             </motion.h1>
 
             <motion.p

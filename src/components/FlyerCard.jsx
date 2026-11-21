@@ -10,7 +10,7 @@ export default function FlyerCard({ flyer, index = 0, onSelectFlyer }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.7, delay: Math.min(index * 0.1, 0.25), ease: PREMIUM_EASE }}
-      className="bg-teal-900/30 border border-teal-800/80 hover:border-gold-500/40 rounded-lg p-6 sm:p-8 lg:p-10 transition-colors"
+      className="bg-teal-900/25 border border-teal-800/70 hover:border-gold-500/60 hover:bg-teal-900/35 rounded-xl p-6 sm:p-8 lg:p-10 transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5"
     >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
         
