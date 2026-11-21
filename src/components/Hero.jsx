@@ -45,7 +45,7 @@ export default function Hero() {
   const [activeCard, setActiveCard] = useState(0);
 
   return (
-    <section className="relative min-h-[90vh] pt-32 pb-20 overflow-hidden flex flex-col justify-center">
+    <section id="home" className="relative min-h-[90vh] pt-32 pb-20 overflow-hidden flex flex-col justify-center">
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 -left-48 w-96 h-96 bg-teal-700/20 rounded-full blur-[128px] pointer-events-none" />
       <div className="absolute top-1/3 -right-48 w-96 h-96 bg-gold-500/10 rounded-full blur-[140px] pointer-events-none" />

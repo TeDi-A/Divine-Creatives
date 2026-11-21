@@ -23,7 +23,7 @@ export default function WhyWorkWithMe() {
   ];
 
   return (
-    <section className="relative py-24 bg-teal-950/80 border-t border-teal-900/80">
+    <section id="why-work-with-me" className="relative py-24 bg-teal-950/80 border-t border-teal-900/80">
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header: Centered */}
         <motion.div

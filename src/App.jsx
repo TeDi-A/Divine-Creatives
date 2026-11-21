@@ -7,6 +7,7 @@ import About from './components/About';
 import WhyWorkWithMe from './components/WhyWorkWithMe';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import MobileNavDock from './components/MobileNavDock';
 
 export default function App() {
   return (
@@ -22,6 +23,8 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      {/* Floating expandable section dock on mobile viewports */}
+      <MobileNavDock />
     </div>
   );
 }
