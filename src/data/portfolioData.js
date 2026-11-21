@@ -482,15 +482,6 @@ export const portfolioManifest = {
       industry: "African Cuisine",
       image: "/Portfolio Assets/Flyers/NKECHI.png",
       description: "Traditional home-cooked Nigerian dishes and meal prep flyer."
-    },
-    {
-      id: "flyer-daybreak",
-      brand: "Daybreak Kitchen",
-      title: "Morning Specials",
-      headline: "Wake Up to Fresh Homemade Meals",
-      industry: "Breakfast & Dining",
-      image: "/Portfolio Assets/Flyers/DAYBREAK_FLYER.png",
-      description: "Breakfast dining menu flyer highlighting fresh hot morning specials."
     }
   ],
   services: [
