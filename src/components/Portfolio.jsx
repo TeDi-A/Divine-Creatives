@@ -295,8 +295,8 @@ export default function Portfolio() {
                 </span>
               </motion.div>
 
-              {/* 2-Column Desktop Grid: Two Portfolio Samples Per Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+              {/* 3-Column Desktop Grid: Three Portfolio Samples Per Row */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7 items-stretch">
                 {filteredCampaigns.map((campaign, index) => (
                   <CampaignCard
                     key={campaign.id}
@@ -327,8 +327,8 @@ export default function Portfolio() {
                 </span>
               </motion.div>
 
-              {/* 2-Column Desktop Grid: Two Portfolio Samples Per Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+              {/* 3-Column Desktop Grid: Three Portfolio Samples Per Row */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7 items-stretch">
                 {filteredFlyers.map((flyer, index) => (
                   <FlyerCard
                     key={flyer.id}

@@ -13,9 +13,9 @@ export default function CampaignCard({ campaign, index = 0, onSelectArtboard }) 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.7, delay: Math.min(index * 0.08, 0.25), ease: PREMIUM_EASE }}
-      className="group bg-teal-900/25 border border-teal-800/70 hover:border-gold-500/60 hover:bg-teal-900/35 rounded-2xl p-5 sm:p-7 transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5 flex flex-col justify-between"
+      className="group bg-teal-900/25 border border-teal-800/70 hover:border-gold-500/60 hover:bg-teal-900/35 rounded-2xl p-4 sm:p-5 lg:p-6 transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5 flex flex-col justify-between"
     >
-      <div className="space-y-6">
+      <div className="space-y-5">
         {/* Featured Project Image (4:5 Aspect Ratio) */}
         <div
           className="relative aspect-[4/5] rounded-xl overflow-hidden bg-teal-950 border border-teal-800/80 cursor-pointer group/img shadow-xl"
@@ -29,7 +29,7 @@ export default function CampaignCard({ campaign, index = 0, onSelectArtboard }) 
           />
           
           <div className="absolute inset-0 bg-teal-950/60 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
-            <span className="px-4 py-2 rounded-md bg-gold-500 text-teal-950 text-xs font-bold uppercase flex items-center gap-1.5 shadow-lg">
+            <span className="px-3.5 py-1.5 rounded-md bg-gold-500 text-teal-950 text-xs font-bold uppercase flex items-center gap-1.5 shadow-lg">
               <Eye className="w-3.5 h-3.5" />
               <span>Open Full View</span>
             </span>
@@ -37,9 +37,9 @@ export default function CampaignCard({ campaign, index = 0, onSelectArtboard }) 
         </div>
 
         {/* Project Information & Hierarchy */}
-        <div className="space-y-4">
+        <div className="space-y-3.5">
           {/* A. Project Tags */}
-          <div className="flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-gold-400">
+          <div className="flex items-center gap-1.5 text-[11px] font-semibold tracking-wider uppercase text-gold-400">
             <span>{campaign.industry}</span>
             <span className="text-teal-700 font-bold">•</span>
             <span>{campaign.assetCount} DESIGNS</span>
@@ -47,38 +47,38 @@ export default function CampaignCard({ campaign, index = 0, onSelectArtboard }) 
 
           {/* B. Brand Name */}
           <div>
-            <h3 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-offwhite-100 uppercase group-hover:text-gold-300 transition-colors">
+            <h3 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-offwhite-100 uppercase group-hover:text-gold-300 transition-colors">
               {campaign.brand}
             </h3>
 
             {/* C. Campaign Headline */}
-            <h4 className="font-display text-base sm:text-lg font-semibold text-offwhite-200 mt-1">
+            <h4 className="font-display text-sm sm:text-base font-semibold text-offwhite-200 mt-0.5">
               {campaign.title}
             </h4>
           </div>
 
           {/* D. Campaign Description */}
-          <p className="text-sm text-offwhite-300 leading-relaxed font-normal">
+          <p className="text-xs sm:text-sm text-offwhite-300 leading-relaxed font-normal">
             {campaign.concept}
           </p>
 
           {/* E. Design Indicator & F. Interactive Design Gallery */}
-          <div className="pt-3 border-t border-teal-800/60 space-y-2.5">
-            <div className="flex items-center justify-between text-[11px] font-mono font-semibold uppercase tracking-wider text-gold-400">
+          <div className="pt-2.5 border-t border-teal-800/60 space-y-2">
+            <div className="flex items-center justify-between text-[10px] font-mono font-semibold uppercase tracking-wider text-gold-400">
               <span>DESIGN {selectedArtboardIndex + 1} OF {campaign.artboards.length}</span>
-              <span className="text-offwhite-400 font-sans normal-case text-xs truncate max-w-[200px]">
+              <span className="text-offwhite-400 font-sans normal-case text-[11px] truncate max-w-[150px]">
                 {activeArtboard.title}
               </span>
             </div>
 
             {/* Thumbnails Gallery */}
-            <div className="flex flex-wrap gap-2.5 pt-0.5">
+            <div className="flex flex-wrap gap-2 pt-0.5">
               {campaign.artboards.map((artboard, idx) => (
                 <button
                   key={artboard.id}
                   onClick={() => setSelectedArtboardIndex(idx)}
                   aria-label={`Select design ${idx + 1}`}
-                  className={`relative w-12 sm:w-14 aspect-[4/5] rounded overflow-hidden border-2 transition-all duration-200 ${
+                  className={`relative w-10 sm:w-11 md:w-12 aspect-[4/5] rounded overflow-hidden border-2 transition-all duration-200 ${
                     selectedArtboardIndex === idx
                       ? 'border-gold-500 scale-105 shadow-md shadow-gold-500/20 opacity-100 ring-1 ring-gold-400/50'
                       : 'border-teal-800/80 opacity-60 hover:opacity-100 hover:border-teal-700'
@@ -97,7 +97,7 @@ export default function CampaignCard({ campaign, index = 0, onSelectArtboard }) 
       </div>
 
       {/* Lightbox / Action Trigger */}
-      <div className="pt-5 mt-4 border-t border-teal-900/50">
+      <div className="pt-4 mt-4 border-t border-teal-900/50">
         <button
           onClick={() => onSelectArtboard(campaign, selectedArtboardIndex)}
           className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold-400 hover:text-gold-300 transition-colors group/btn"
